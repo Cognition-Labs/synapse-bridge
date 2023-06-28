@@ -1,14 +1,14 @@
 {
   "name": "synapse-bridge",
-  "version": "1.0.0",
-  "description": "Synapse Bridge",
+  "version": "0.1.6",
+  "description": "Zotero Addon Template",
   "config": {
-    "addonName": "Synapse Bridge",
-    "addonID": "hello@cognitionlabs.dev",
-    "addonRef": "synapsebridge",
-    "addonInstance": "SynapseBridge",
-    "prefsPrefix": "extensions.zotero.synapsebridge",
-    "releasepage": "https://github.com/Cognition-Labs/synapse-bridge/releases/latest/download/zotero-addon-template.xpi",
+    "addonName": "Zotero Addon Template",
+    "addonID": "addontemplate@euclpts.com",
+    "addonRef": "addontemplate",
+    "addonInstance": "AddonTemplate",
+    "prefsPrefix": "extensions.zotero.addontemplate",
+    "releasepage": "https://github.com/windingwind/zotero-addon-template/releases/latest/download/zotero-addon-template.xpi",
     "updaterdf": "https://raw.githubusercontent.com/windingwind/zotero-addon-template/bootstrap/update.json"
   },
   "main": "src/index.ts",
@@ -31,14 +31,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Cognition-Labs/synapse-bridge.git"
+    "url": "git+https://github.com/windingwind/zotero-addon-template.git"
   },
   "author": "windingwind",
   "license": "AGPL-3.0-or-later",
   "bugs": {
-    "url": "https://github.com/Cognition-Labs/synapse-bridge/issues"
+    "url": "https://github.com/windingwind/zotero-addon-template/issues"
   },
-  "homepage": "https://github.com/Cognition-Labs/synapse-bridge#readme",
+  "homepage": "https://github.com/windingwind/zotero-addon-template#readme",
   "dependencies": {
     "zotero-plugin-toolkit": "^2.1.3"
   },
