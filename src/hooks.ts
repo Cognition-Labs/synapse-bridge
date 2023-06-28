@@ -21,22 +21,24 @@ async function onStartup() {
     `chrome://${config.addonRef}/content/icons/favicon.png`
   );
 
-  BasicExampleFactory.registerPrefs();
-  BasicExampleFactory.registerNotifier();
-  KeyExampleFactory.registerShortcuts();
-  UIExampleFactory.registerStyleSheet();
-  UIExampleFactory.registerRightClickMenuItem();
-  UIExampleFactory.registerRightClickMenuPopup();
-  UIExampleFactory.registerWindowMenuWithSeparator();
-  await UIExampleFactory.registerExtraColumn();
-  await UIExampleFactory.registerExtraColumnWithCustomCell();
-  await UIExampleFactory.registerCustomCellRenderer();
-  await UIExampleFactory.registerCustomItemBoxRow();
-  UIExampleFactory.registerLibraryTabPanel();
-  await UIExampleFactory.registerReaderTabPanel();
-  PromptExampleFactory.registerNormalCommandExample();
-  PromptExampleFactory.registerAnonymousCommandExample();
-  PromptExampleFactory.registerConditionalCommandExample();
+  ztoolkit.log(Zotero.Items);
+  ztoolkit.log("Attachments");
+  ztoolkit.log(Zotero.Attachments);
+  ztoolkit.log("Date");
+  ztoolkit.log(Zotero.Date);
+  ztoolkit.log("File");
+  ztoolkit.log(Zotero.File);
+  ztoolkit.log("FileTypes");
+  ztoolkit.log(Zotero.FileTypes);
+  ztoolkit.log("ItemTypes");
+  ztoolkit.log(Zotero.ItemTypes);
+  ztoolkit.log("Libraries");
+  ztoolkit.log(Zotero.Libraries);
+  for (let i = 0; i < 20; i++) {
+    ztoolkit.log(
+      "------------------------------------------------------------------"
+    );
+  }
 
   const popupWin = new ztoolkit.ProgressWindow(config.addonName, {
     closeOnClick: true,
@@ -49,51 +51,45 @@ async function onStartup() {
     })
     .show();
 
-  popupWin.addDescription("Your data is being synced...");
-  popupWin.addDescription("testing 123...");
+  popupWin.addDescription("slnfsjd");
+
+  BasicExampleFactory.registerPrefs();
+
+  BasicExampleFactory.registerNotifier();
+
+  KeyExampleFactory.registerShortcuts();
 
   await Zotero.Promise.delay(1000);
   popupWin.changeLine({
     progress: 30,
-    text: `[30%] Syncing data...`,
+    text: `[30%] ${getString("startup.begin")}`,
   });
 
-  const libraries = await Zotero.Libraries.getAll();
-  let items: Zotero.Item[] = [];
+  UIExampleFactory.registerStyleSheet();
 
-  libraries.forEach(async (library) => {
-    items = items.concat(
-      await Zotero.Items.getAll(library.id, false, false, false)
-    );
-  });
+  UIExampleFactory.registerRightClickMenuItem();
 
-  ztoolkit.log(items);
+  UIExampleFactory.registerRightClickMenuPopup();
 
-  for (let i = 0; i < 100; i++) {
-    ztoolkit.log("--------------------");
-  }
+  UIExampleFactory.registerWindowMenuWithSeparator();
 
-  const parentItems = items
-    .filter((item) => item.isTopLevelItem())
-    .map((item) => {
-      return { ...item, children: [] };
-    });
+  await UIExampleFactory.registerExtraColumn();
 
-  const childItems = items.filter((item) => !item.isTopLevelItem());
+  await UIExampleFactory.registerExtraColumnWithCustomCell();
 
-  for (let i = 0; i < childItems.length; i++) {
-    const parent = childItems[i].parentItem;
-    if (parent) {
-      const parentIndex = parentItems.findIndex(
-        (item) => item.id == parent?.id
-      );
-      if (parentIndex > -1) {
-        parentItems[parentIndex].children.push(childItems[i]);
-      }
-    }
-  }
+  await UIExampleFactory.registerCustomCellRenderer();
 
-  ztoolkit.log(parentItems);
+  await UIExampleFactory.registerCustomItemBoxRow();
+
+  UIExampleFactory.registerLibraryTabPanel();
+
+  await UIExampleFactory.registerReaderTabPanel();
+
+  PromptExampleFactory.registerNormalCommandExample();
+
+  PromptExampleFactory.registerAnonymousCommandExample();
+
+  PromptExampleFactory.registerConditionalCommandExample();
 
   await Zotero.Promise.delay(1000);
 
@@ -101,8 +97,7 @@ async function onStartup() {
     progress: 100,
     text: `[100%] ${getString("startup.finish")}`,
   });
-
-  popupWin.startCloseTimer(5000);
+  popupWin.startCloseTimer(50000);
 
   addon.hooks.onDialogEvents("dialogExample");
 }
