@@ -1,0 +1,53 @@
+{
+  "userLibraryID": 1,
+  "userLibrary": {
+    "_ObjectType": "Library",
+    "_objectTypePlural": "libraries",
+    "_ObjectTypePlural": "Libraries",
+    "_changed": {},
+    "_dataLoaded": { "collection": true, "search": true, "item": true },
+    "_dataLoadedDeferreds": {
+      "collection": { "promise": { "isFulfilled": true, "isRejected": false } },
+      "search": { "promise": { "isFulfilled": true, "isRejected": false } },
+      "item": { "promise": { "isFulfilled": true, "isRejected": false } }
+    },
+    "_hasCollections": false,
+    "_hasSearches": false,
+    "_storageDownloadNeeded": false,
+    "_libraryID": 1,
+    "_libraryType": "user",
+    "_libraryEditable": true,
+    "_libraryFilesEditable": true,
+    "_libraryVersion": 164,
+    "_libraryStorageVersion": 164,
+    "_libraryLastSync": "2023-06-27T22:31:20.000Z",
+    "_libraryArchived": false
+  },
+  "_cache": {
+    "1": {
+      "_ObjectType": "Library",
+      "_objectTypePlural": "libraries",
+      "_ObjectTypePlural": "Libraries",
+      "_changed": {},
+      "_dataLoaded": { "collection": true, "search": true, "item": true },
+      "_dataLoadedDeferreds": {
+        "collection": {
+          "promise": { "isFulfilled": true, "isRejected": false }
+        },
+        "search": { "promise": { "isFulfilled": true, "isRejected": false } },
+        "item": { "promise": { "isFulfilled": true, "isRejected": false } }
+      },
+      "_hasCollections": false,
+      "_hasSearches": false,
+      "_storageDownloadNeeded": false,
+      "_libraryID": 1,
+      "_libraryType": "user",
+      "_libraryEditable": true,
+      "_libraryFilesEditable": true,
+      "_libraryVersion": 164,
+      "_libraryStorageVersion": 164,
+      "_libraryLastSync": "2023-06-27T22:31:20.000Z",
+      "_libraryArchived": false
+    }
+  }
+}
