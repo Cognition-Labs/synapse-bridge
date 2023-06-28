@@ -1,7 +1,7 @@
 {
   "name": "synapse-bridge",
   "version": "0.1.6",
-  "description": "Synapse Bridge",
+  "description": "Zotero Addon Template",
   "config": {
     "addonName": "Zotero Addon Template",
     "addonID": "addontemplate@euclpts.com",
